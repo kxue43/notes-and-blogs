@@ -66,12 +66,14 @@ Add the *public key* to the SSH server, this time using password authentication 
 ssh-copy-id -i $PUBLIC_KEY_PATH ${USER}@${HOST}
 ```
 
-Put the following section in `~/.ssh/config`. Replace `<***>` with the values of the same-named environment variables above.
+Put the following section in `~/.ssh/config`. Replace `<ALIAS>` with an easy-to-remember alias.
+Replace other `<***>` with the values of the same-named environment variables above.
 Note that `IdentityAgent none` is critical as it forces the Homebrew SSH to handle the authentication itself rather than delegating it to the (incompatible) Apple agent.
 
 ```
-Host <HOST>
+Host <ALIAS>
     User <USER>
+    HostName <HOST>
     IdentityAgent none
     IdentityFile <PUBLIC_KEY_PATH>
 ```
@@ -79,7 +81,7 @@ Host <HOST>
 Remote into the SSH server with the following command. Touch the secure key when prompted.
 
 ```bash
-ssh ${USER}@${HOST}
+ssh ${USER}@${ALIAS}
 ```
 
 ## Optionally Disable SSH Password Authentication
