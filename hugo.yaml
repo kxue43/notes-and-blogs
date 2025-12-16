@@ -1,0 +1,25 @@
+baseURL: "https://kxue43.github.io/notes-and-blogs/"
+languageCode: "en-us"
+title: "Ke's Notes and Blogs"
+
+module:
+  imports:
+    - path: "github.com/gethinode/hinode"
+
+menus:
+  main:
+    - name: "Blogs"
+      pageRef: "/blogs/"
+      weight: 20
+    - name: "Notes"
+      pageRef: "/notes/"
+      weight: 30
+taxonomies:
+  tag: tags
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
