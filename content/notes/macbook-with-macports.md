@@ -69,32 +69,16 @@ sudo chsh -s /bin/bash
 
 Restart computer for the default shell change to take effect.
 
-## Install and configure iTerm2
+## Install Ghostty
 
-- [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip)
+Go to the [download page](https://ghostty.org/download). Download the package installer and use it.
 
-  Download. Unzip. Search for "Font Book" app. `File` --> `Add Fonts to Current User`.
-
-- [Color scheme files for iTerm2](https://github.com/morhetz/gruvbox-contrib/tree/master/iterm2)
-
-- [iTerm2](https://iterm2.com/)
-
-  * Open iTerm2 Settings. Go to `Profiles` -> `Default`.
-  * Under `General`, set `Command` to `Command`, `/usr/local/bin/bash -l -i`.
-    Untick "Load shell integration automatically".
-  * Under `Colors`, open the `Color Preset` dropdown and click `Import`. Import the color scheme file
-    downloaded in the previous step. Then select the imported color scheme.
-    Untick "Use separate colors for light and dark mode", "Use bright version of ANSI colors for bold text"
-    and "Use custom color for bold text".
-  * Under `Text`, set `Font` to `JetBrainsMono Nerd Font`, `Regular`, (size) `16`.
-  * Under `Keys`, change `Left option key` to `Esc+`. This allows apps running in Tmux to receive the Alt key. 
-
-From now on perform all CLI operations in iTerm2.
+From now on perform all CLI operations in Ghostty.
 
 ## Install essential utilities
 
 ```bash
-sudo port install curl jq gawk rlwrap
+sudo port install curl jq gawk rlwrap fzf bat
 ```
 
 ## Install coding tools
@@ -181,6 +165,7 @@ go install github.com/kxue43/cli-toolkit/cmd/toolkit-serve-static@latest
 go install github.com/kxue43/cli-toolkit/cmd/toolkit-show-md@latest
 go install mvdan.cc/sh/v3/cmd/shfmt@latest
 go install golang.org/x/tools/cmd/godoc@latest
+go install golang.org/x/pkgsite
 go install github.com/air-verse/air@latest
 ```
 

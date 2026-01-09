@@ -19,16 +19,6 @@ All commands on this page should be executed from the user's home directory.
 
 Follow the [official doc](https://docs.fedoraproject.org/en-US/fedora-silverblue/troubleshooting/#_using_nvidia_drivers).
 
-## Layer Vim on host OS
-
-Vim is needed to edit config files in `/etc` without entering a toolbox container.
-
-```bash
-sudo rpm-ostree install vim-enhanced
-```
-
-Restart.
-
 ## Configure terminal
 
 Download [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip).
@@ -57,7 +47,7 @@ All subsequent commands run in this `dev` container.
 
 ```bash
 sudo dnf group install development-tools
-sudo dnf install rlwrap jq
+sudo dnf install rlwrap jq fzf bat
 ```
 
 ## Install coding tools
@@ -139,6 +129,7 @@ go install github.com/kxue43/cli-toolkit/cmd/toolkit-serve-static@latest
 go install github.com/kxue43/cli-toolkit/cmd/toolkit-show-md@latest
 go install mvdan.cc/sh/v3/cmd/shfmt@latest
 go install golang.org/x/tools/cmd/godoc@latest
+go install golang.org/x/pkgsite
 go install github.com/air-verse/air@latest
 ```
 
