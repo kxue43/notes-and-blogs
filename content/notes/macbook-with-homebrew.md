@@ -48,18 +48,24 @@ eval $(/opt/homebrew/bin/brew shellenv)
 brew install bash bash-completion@2
 ```
 
-Put `bash` inside `/usr/local/bin` (`/bin/bash` is too old).
+Put `bash` inside `/usr/local/bin` and add it to `/etc/shells`.
 
 ```bash
 pushd /usr/local/bin
 sudo ln -s /opt/homebrew/bin/bash
 popd
+echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
 ```
 
-Change the default shell for both human admin user and `root`.
+Change the default shell for human admin user to `/usr/local/bin/bash`.
 
 ```bash
-chsh -s /bin/bash
+chsh -s /usr/local/bin/bash
+```
+
+Change the default shell for `root` to `/bin/bash`.
+
+```bash
 sudo chsh -s /bin/bash
 ```
 
