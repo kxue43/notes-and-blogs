@@ -175,6 +175,12 @@ go install golang.org/x/pkgsite
 go install github.com/air-verse/air@latest
 ```
 
+## Install Rust executables
+
+```bash
+cargo install --locked tree-sitter-cli
+```
+
 ## Set up NeoVim
 
 ```bash
