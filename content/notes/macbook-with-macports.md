@@ -162,6 +162,47 @@ git config --file ~/.gitconfig.work user.name USER_NAME
 git config --file ~/.gitconfig.work user.email EMAIL
 ```
 
+## Set up GPG to sign Git commits
+
+Install `gnupg` and `pinentry-mac`. The former is the GPG software while the latter is a GUI for prompting for passphrases.
+
+```bash
+brew install gnupg pinentry-mac
+echo "pinentry-program $(which pinentry-mac)" >>  ~/.gnupg/gpg-agent.conf
+```
+
+Restart `gpg-agent`.
+
+```bash
+gpg-connect-agent reloadagent /bye
+```
+
+Enter GPG interactive mode by `gpg --card-edit`, and then enter the `fetch` and `quit` command in order.
+The outputs would be something like below.
+
+```
+gpg/card> fetch
+gpg: requesting key from 'https://github.com/kxue43.gpg'
+gpg: key C9EED408F4B6D021: "Ke Xue (kxue43.github.io) <xueke.kent@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+
+gpg/card> quit
+```
+
+Then use `gpg --list-secret-keys` to confirm that the keys have been fetched.
+The outputs should be something like below.
+
+```
+[keyboxd]
+---------
+sec>  rsa4096 2025-12-24 [SC]
+      5EF2BE73370DCE7E808814DBC9EED408F4B6D021
+      Card serial no. = 0006 27538718
+uid           [ unknown] Ke Xue (kxue43.github.io) <xueke.kent@gmail.com>
+ssb>  rsa4096 2025-12-24 [E]
+```
+
 ## Install Go executables
 
 ```bash
@@ -184,7 +225,7 @@ cargo install --locked tree-sitter-cli
 ## Set up NeoVim
 
 ```bash
-git clone git@github.com:kxue43/nvim-files.git ~/.config/nvim && nvim
+git clone https://github.com/kxue43/nvim-files ~/.config/nvim && nvim
 ```
 
 After plugin installation finishes, run `:MasonInstallAll` to install all LSPs.
