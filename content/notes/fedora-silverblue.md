@@ -145,7 +145,8 @@ cargo install --locked tree-sitter-cli
 git clone https://github.com/kxue43/nvim-files ~/.config/nvim && nvim
 ```
 
-After plugin installation finishes, run `:MasonInstallAll` to install all LSPs.
+After plugin installation finishes, run `:MasonInstallAll` to install all LSPs
+and `:TSInstallAll` to install all `tree-sitter` parsers.
 
 Run `:checkhealth` to see if there are any problems.
 

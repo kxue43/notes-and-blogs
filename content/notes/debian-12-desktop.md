@@ -145,7 +145,7 @@ git clone https://github.com/kxue43/dot-files ~/.config/dot-files
 ~/.config/dot-files/set-up.sh --with=untracked
 ```
 
-Restart the iTerm2 terminal so that Bash start-up files take effect.
+Restart the terminal so that Bash start-up files take effect.
 
 ## Set Git name and email for work environment (optional)
 

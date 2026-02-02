@@ -163,7 +163,7 @@ git clone https://github.com/kxue43/dot-files ~/.config/dot-files
 ~/.config/dot-files/set-up.sh --with=untracked
 ```
 
-Restart the iTerm2 terminal so that Bash start-up files take effect.
+Restart the terminal so that Bash start-up files take effect.
 
 ## Set Git name and email for work environment (optional)
 
@@ -238,13 +238,14 @@ cargo install --locked tree-sitter-cli
 git clone https://github.com/kxue43/nvim-files ~/.config/nvim && nvim
 ```
 
-After plugin installation finishes, run `:MasonInstallAll` to install all LSPs.
+After plugin installation finishes, run `:MasonInstallAll` to install all LSPs
+and `:TSInstallAll` to install all `tree-sitter` parsers.
 
 Run `:checkhealth` to see if there are any problems.
 
 ## Install Java, Maven and Gradle
 
-First install [Amazon Corretto 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html) or another LTS version.
+First install [Amazon Corretto 21](https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html) or another LTS version.
 This manual installation is to avoid the Oracle OpenJDK that comes from `brew install openjdk`.
 
 Open the file `~/.${env}.bashrc` (`${env}` depends on environment) and update the default Java version to use.
