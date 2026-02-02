@@ -7,6 +7,7 @@ layout: docs
 description: Use GPG keys to sign GitHub commits.
 tags: 
 - git
+- macos
 ---
 
 GPG, or GNU Privacy Guard, is a free-software replacement for Symantec's PGP cryptographic software suite.
@@ -20,10 +21,23 @@ otherwise any one can claim to be any one by setting username and password with 
 
 ## Installing GPG
 
-On macOS, use `brew`:
-
 ```bash
 brew install gnupg
+```
+
+## Installing `pinentry-mac`
+
+`pinentry-mac` is a GUI for prompting for passphrases.
+
+```bash
+brew gnupg pinentry-mac
+echo "pinentry-program $(which pinentry-mac)" >>  ~/.gnupg/gpg-agent.conf
+```
+
+Restart `gpg-agent`.
+
+```bash
+gpg-connect-agent reloadagent /bye
 ```
 
 ## Managing GPG Keys
@@ -100,12 +114,6 @@ To use a specific key:
 git config --global user.signingkey $KEYID
 ```
 
-Add the following to `~/.zshrc`:
-
-```
-export GPG_TTY=$(tty)
-```
-
 ## Sign with `git`
 
 To sign a commit:
@@ -126,10 +134,36 @@ To sign all commits by default:
 git config --global commit.gpgsign true
 ```
 
-## GitHub Settings
+## Sign with a GPG key stored on Yubikey
 
-To display verification status with commits and tags, the following
-should be done in GitHub web UI.
+Enter GPG interactive mode by `gpg --card-edit`, and then enter the `fetch` and `quit` command in order.
+The outputs would be something like below.
 
+```
+gpg/card> fetch
+gpg: requesting key from 'https://github.com/kxue43.gpg'
+gpg: key C9EED408F4B6D021: "Ke Xue (kxue43.github.io) <xueke.kent@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+
+gpg/card> quit
+```
+
+Then use `gpg --list-secret-keys` to confirm that the keys have been fetched.
+The outputs should be something like below.
+
+```
+[keyboxd]
+---------
+sec>  rsa4096 2025-12-24 [SC]
+      5EF2BE73370DCE7E808814DBC9EED408F4B6D021
+      Card serial no. = 0006 27538718
+uid           [ unknown] Ke Xue (kxue43.github.io) <xueke.kent@gmail.com>
+ssb>  rsa4096 2025-12-24 [E]
+```
+
+## References
+
+- [Developer's Guide to GPG Key](https://developer.okta.com/blog/2021/07/07/developers-guide-to-gpg)
 - [Add key to GitHub](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account).
-- [Turn on display verification](https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits).
+- [Turn on GitHub display verification](https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits).
