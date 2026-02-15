@@ -147,11 +147,32 @@ git clone https://github.com/kxue43/dot-files ~/.config/dot-files
 
 Restart the terminal so that Bash start-up files take effect.
 
-## Set Git name and email for work environment (optional)
+## Set the `.gitconfig.local` file
+
+If the global Git user name and email must be different from the personal ones,
+set them via the following commands.
 
 ```bash
-git config --file ~/.gitconfig.work user.name USER_NAME
-git config --file ~/.gitconfig.work user.email EMAIL
+git config --file ~/.gitconfig.local user.name USERNAME
+git config --file ~/.gitconfig.local user.email EMAIL
+```
+
+To configure commit signing differently from the default, add the following contents to `.gitconfig.local`.
+Use the options to turn commit signing on/off or to use a different GPG key.
+
+```ini
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[user]
+	signingkey = ${GPG_KEY_ID}
+```
+
+If all Git configurations are the same with the personal defaults, symlink `.gitconfig.local` to `.gitconfig.personal`.
+
+```bash
+ln -s $HOME/.config/dot-files/.gitconfig.personal $HOME/.gitconfig.local
 ```
 
 ## Install Go executables
