@@ -47,7 +47,7 @@ All subsequent commands run in this `dev` container.
 
 ```bash
 sudo dnf group install development-tools
-sudo dnf install rlwrap jq fzf bat tree
+sudo dnf install rlwrap jq yq fzf bat tree
 ```
 
 ## Install coding tools

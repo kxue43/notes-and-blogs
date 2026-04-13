@@ -80,7 +80,7 @@ From now on perform all CLI operations in Ghostty.
 ## Install essential utilities
 
 ```bash
-brew install gawk rlwrap fzf bat tree
+brew install rlwrap fzf bat tree jq yq
 ```
 
 ## Install coding tools
