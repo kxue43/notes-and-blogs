@@ -114,8 +114,8 @@ sudo dnf install shellcheck
 
 ```bash
 mkdir -p ~/.config
-git clone https://github.com/kxue43/dot-files ~/.config/dot-files
-~/.config/dot-files/set-up.sh --with=untracked
+git clone https://github.com/kxue43/dotfiles ~/.config/dotfiles
+~/.config/dotfiles/set-up.sh
 ```
 
 Restart the Terminal app so that Bash start-up files take effect.

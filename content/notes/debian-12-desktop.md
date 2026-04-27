@@ -141,8 +141,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ```bash
 mkdir -p ~/.config
-git clone https://github.com/kxue43/dot-files ~/.config/dot-files
-~/.config/dot-files/set-up.sh --with=untracked
+git clone https://github.com/kxue43/dotfiles ~/.config/dotfiles
+~/.config/dotfiles/set-up.sh
 ```
 
 Restart the terminal so that Bash start-up files take effect.
@@ -172,7 +172,7 @@ Use the options to turn commit signing on/off or to use a different GPG key.
 If all Git configurations are the same with the personal defaults, symlink `.gitconfig.local` to `.gitconfig.personal`.
 
 ```bash
-ln -s $HOME/.config/dot-files/.gitconfig.personal $HOME/.gitconfig.local
+ln -s $HOME/.config/dotfiles/.gitconfig.personal $HOME/.gitconfig.local
 ```
 
 ## Install Go executables
