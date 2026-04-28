@@ -69,6 +69,8 @@ ssh-copy-id -i $PUBLIC_KEY_PATH ${USER}@${HOST}
 Put the following section in `~/.ssh/config`. Replace `<ALIAS>` with an easy-to-remember alias.
 Replace other `<***>` with the values of the same-named environment variables above.
 Note that `IdentityAgent none` is critical as it forces the Homebrew SSH to handle the authentication itself rather than delegating it to the (incompatible) Apple agent.
+`SetEnv` makes things work when SSH'ing into a Linux server from Ghostty. Because Ghostty is relatively new, its terminfo is probably not included
+in the `terminfo` database of my Linux distros.
 
 ```
 Host <ALIAS>
@@ -76,6 +78,7 @@ Host <ALIAS>
     HostName <HOST>
     IdentityAgent none
     IdentityFile <PUBLIC_KEY_PATH>
+    SetEnv TERM=xterm-256color
 ```
 
 Remote into the SSH server with the following command. Touch the secure key when prompted.
