@@ -70,7 +70,7 @@ Put the following section in `~/.ssh/config`. Replace `<ALIAS>` with an easy-to-
 Replace other `<***>` with the values of the same-named environment variables above.
 Note that `IdentityAgent none` is critical as it forces the Homebrew SSH to handle the authentication itself rather than delegating it to the (incompatible) Apple agent.
 `SetEnv` makes things work when SSH'ing into a Linux server from Ghostty. Because Ghostty is relatively new, its terminfo is probably not included
-in the `terminfo` database of my Linux distros.
+in the `terminfo` database of many Linux distros.
 
 ```
 Host <ALIAS>
