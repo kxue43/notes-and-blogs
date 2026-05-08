@@ -1,13 +1,13 @@
 ---
 author: Sato Seinosuke
-title: 佐藤 清之介
-description: 信は望む所の實体にして 未だ見ぬ事の證據なり
+title: Landing Page
+description: notes and blogs
 content_blocks:
   - _bookshop_name: hero
     heading:
-      title: Misc.
+      title: 一所懸命
       content: |-
-        Ke's IT-related notes and blogs.
+        信は望む所の實体にして 未だ見ぬ事の證據なり
       width: 6
     background:
       color: primary

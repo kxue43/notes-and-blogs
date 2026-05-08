@@ -1,6 +1,6 @@
 baseURL: "https://kxue43.github.io/notes-and-blogs/"
 languageCode: "en-us"
-title: "Ke's Notes and Blogs"
+title: 佐藤 清之介
 
 module:
   imports:
