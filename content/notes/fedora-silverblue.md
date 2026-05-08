@@ -1,5 +1,5 @@
 ---
-author: Ke Xue
+author: Sato Seinosuke
 title: Fedora Silverblue Desktop
 date: 2025-10-27T13:41:19-04:00
 draft: false

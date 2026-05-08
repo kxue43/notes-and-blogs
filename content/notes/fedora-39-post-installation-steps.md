@@ -1,5 +1,5 @@
 ---
-author: Ke Xue
+author: Sato Seinosuke
 title: Fedora 39 Post Installation Steps
 date: 2024-11-05T17:16:29-05:00
 draft: true

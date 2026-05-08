@@ -1,5 +1,5 @@
 ---
-author: Ke Xue
+author: 佐藤 清之介
 title: Debian 12 Desktop
 date: 2025-10-27T13:41:19-04:00
 draft: true

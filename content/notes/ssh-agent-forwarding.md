@@ -1,5 +1,5 @@
 ---
-author: Ke Xue
+author: Sato Seinosuke
 title: SSH Agent Forwarding
 date: 2025-12-15T20:39:48-05:00
 draft: true

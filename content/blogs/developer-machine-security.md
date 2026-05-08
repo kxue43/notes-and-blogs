@@ -1,5 +1,5 @@
 ---
-author: Ke Xue
+author: Sato Seinosuke
 title: Developer Machine Security
 date: 2025-12-15T19:53:25-05:00
 draft: true

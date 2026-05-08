@@ -1,5 +1,5 @@
 ---
-author: Ke Xue
+author: Sato Seinosuke
 title: {{ replace .Name "-" " " | title }}
 date: {{ .Date }}
 draft: true

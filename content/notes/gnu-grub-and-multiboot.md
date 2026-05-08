@@ -1,5 +1,5 @@
 ---
-author: Ke Xue
+author: Sato Seinosuke
 title: GNU GRUB and Multiboot
 date: 2024-11-04T21:45:41-05:00
 draft: false

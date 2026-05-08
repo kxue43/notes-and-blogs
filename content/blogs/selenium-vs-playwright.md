@@ -1,5 +1,5 @@
 ---
-author: Ke Xue
+author: Sato Seinosuke
 title: Selenium vs. Playwright
 date: 2022-02-05T17:31:35-05:00
 draft: false

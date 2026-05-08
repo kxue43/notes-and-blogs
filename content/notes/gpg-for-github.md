@@ -1,5 +1,5 @@
 ---
-author: Ke Xue
+author: Sato Seinosuke
 title: GPG for GitHub
 date: 2024-11-05T21:38:04-05:00
 draft: false
@@ -142,7 +142,7 @@ The outputs would be something like below.
 ```
 gpg/card> fetch
 gpg: requesting key from 'https://github.com/kxue43.gpg'
-gpg: key C9EED408F4B6D021: "Ke Xue (kxue43.github.io) <xueke.kent@gmail.com>" not changed
+gpg: key C9EED408F4B6D021: "Sato Seinosuke (kxue43.github.io) <kxue43@gmail.com>" not changed
 gpg: Total number processed: 1
 gpg:              unchanged: 1
 
@@ -158,7 +158,7 @@ The outputs should be something like below.
 sec>  rsa4096 2025-12-24 [SC]
       5EF2BE73370DCE7E808814DBC9EED408F4B6D021
       Card serial no. = 0006 27538718
-uid           [ unknown] Ke Xue (kxue43.github.io) <xueke.kent@gmail.com>
+uid           [ unknown] Sato Seinosuke (kxue43.github.io) <kxue43@gmail.com>
 ssb>  rsa4096 2025-12-24 [E]
 ```
 
