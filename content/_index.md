@@ -1,7 +1,7 @@
 ---
-author: Ke Xue
-title: Misc.
-description: Ke's IT-related notes and blogs.
+author: Sato Seinosuke
+title: 佐藤 清之介
+description: 信は望む所の實体にして 未だ見ぬ事の證據なり
 content_blocks:
   - _bookshop_name: hero
     heading:
