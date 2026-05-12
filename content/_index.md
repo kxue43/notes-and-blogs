@@ -5,7 +5,7 @@ description: notes and blogs
 content_blocks:
   - _bookshop_name: hero
     heading:
-      title: 一所懸命
+      title: "一所懸命"
       content: |-
         信は望む所の實体にして 未だ見ぬ事の證據なり
       width: 6
