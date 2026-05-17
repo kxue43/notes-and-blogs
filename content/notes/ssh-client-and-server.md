@@ -1,5 +1,5 @@
 ---
-author: 佐藤 清之介
+author: Sato Seinosuke
 title: SSH Client and Server
 date: 2024-11-05T21:31:53-05:00
 draft: false

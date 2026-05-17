@@ -1,5 +1,5 @@
 ---
-author: 佐藤 清之介
+author: Sato Seinosuke
 title: NeoVim Tips
 date: 2025-11-13T15:41:14-05:00
 draft: false

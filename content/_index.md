@@ -21,28 +21,6 @@ content_blocks:
 
   - _bookshop_name: articles
     heading:
-      title: Notes
-      align: start
-    background:
-      background: body-tertiary
-    hide-empty: false
-    input:
-      section: notes
-      reverse: true
-      sort: date
-    more:
-      title: More notes
-    cols: 3
-    padding: 4
-    limit: 6
-    icon-style: fa-5x
-    header-style: none
-    footer-style: tags
-    orientation: horizontal-sm
-    class: border-1 card-emphasize
-
-  - _bookshop_name: articles
-    heading:
       title: Blogs
       align: start
     background:
@@ -59,6 +37,28 @@ content_blocks:
     padding: 4
     limit: 6
     icon-style: fa-5x
+    footer-style: tags
+    orientation: horizontal-sm
+    class: border-1 card-emphasize
+
+  - _bookshop_name: articles
+    heading:
+      title: Notes
+      align: start
+    background:
+      background: body-tertiary
+    hide-empty: false
+    input:
+      section: notes
+      reverse: true
+      sort: date
+    more:
+      title: More notes
+    cols: 3
+    padding: 4
+    limit: 6
+    icon-style: fa-5x
+    header-style: none
     footer-style: tags
     orientation: horizontal-sm
     class: border-1 card-emphasize

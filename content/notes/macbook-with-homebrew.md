@@ -1,5 +1,5 @@
 ---
-author: 佐藤 清之介
+author: Sato Seinosuke
 title: MacBook with Homebrew
 date: 2025-10-27T13:36:55-04:00
 draft: false
