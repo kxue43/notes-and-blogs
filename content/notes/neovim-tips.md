@@ -11,19 +11,39 @@ tags:
 
 ## Global find-and-replace in NeoVim (no LSP)
 
-Use Telescope → quickfix → `:cfdo` when there is no LSP refactoring support (e.g. shell codebases).
+Use Telescope → quickfix → `:cdo` when there is no LSP refactoring support (e.g. shell codebases).
 
 1. `<leader>fw` — open live grep and search for the pattern
+
 2. In Telescope results, `<C-q>` to send all matches to the quickfix list
    - Or `<Tab>` to select specific entries, then `<M-q>` to send only those
-3. Run the substitution across all matched files:
+
+3. Run the substitution:
+
    ```vim
-   :cfdo %s/old/new/g | update
+   :cdo s/old/new/g | update
    ```
-   - `:cfdo` runs the command once per file (vs `:cdo` which runs per match line)
+
+   - `:cdo` runs the command once **per match line** — only the lines ripgrep found,
+     so other occurrences in the same file are not touched
+   - Use `:cfdo %s/old/new/g | update` instead if you want a whole-file substitution
+     on each matched file (e.g. pattern is already precise enough)
    - `| update` saves each file after substitution
-   - Add the `c` flag (`%s/old/new/gc`) for per-match confirmation
+   - Add the `c` flag (`s/old/new/gc`) for per-match confirmation
+   - Use `\b` for whole-word matching: `s/\bold\b/new/g`
+
 4. `:cclose` to dismiss the quickfix window
+
+### Searching within the current file only
+
+Use `:vimgrep` with `%` instead of Telescope:
+
+```vim
+:vimgrep /pattern/ % | copen
+```
+
+Then proceed with `:cdo s/old/new/g | update` as above. Note that `:cdo`/`:cfdo` require a non-empty quickfix list — always populate it first.
+`copen` opens the quickfix list windown. Otherwise it's not shown.
 
 ## Inspect a user-created command
 
