@@ -9,6 +9,33 @@ tags:
 - NeoVim
 ---
 
+## Global find-and-replace in NeoVim (no LSP)
+
+Use Telescope → quickfix → `:cfdo` when there is no LSP refactoring support (e.g. shell codebases).
+
+1. `<leader>fw` — open live grep and search for the pattern
+2. In Telescope results, `<C-q>` to send all matches to the quickfix list
+   - Or `<Tab>` to select specific entries, then `<M-q>` to send only those
+3. Run the substitution across all matched files:
+   ```vim
+   :cfdo %s/old/new/g | update
+   ```
+   - `:cfdo` runs the command once per file (vs `:cdo` which runs per match line)
+   - `| update` saves each file after substitution
+   - Add the `c` flag (`%s/old/new/gc`) for per-match confirmation
+4. `:cclose` to dismiss the quickfix window
+
+## Inspect a user-created command
+
+```
+:verbose command MasonInstallAll
+```
+
+This shows where the command is installed. It reveals that `:MasonInstallAll` is defined in [NvChad/ui] under [nvchad/au.lua].
+
+[NvChad/ui]: https://github.com/NvChad/ui
+[nvchad/au.lua]: https://github.com/NvChad/ui/blob/v3.0/lua/nvchad/au.lua
+
 ## Color palette
 
 When using NvChad, color palette is provided by [NvChad/base46](https://github.com/NvChad/base46).
@@ -69,14 +96,3 @@ to the project root of the plugin's GitHub repo.
 The rest are some `**/after` folders that serve a special purpose.
 
 [package loader]: https://www.reddit.com/r/neovim/comments/14bglt6/i_dont_understand_lua_modules/
-
-## Inspect a user-created command
-
-```
-:verbose command MasonInstallAll
-```
-
-This shows where the command is installed. It reveals that `:MasonInstallAll` is defined in [NvChad/ui] under [nvchad/au.lua].
-
-[NvChad/ui]: https://github.com/NvChad/ui
-[nvchad/au.lua]: https://github.com/NvChad/ui/blob/v3.0/lua/nvchad/au.lua
