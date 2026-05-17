@@ -1,6 +1,6 @@
 ---
 author: 佐藤 清之介
-title: "Rethinking How I Use Claude: From Append-Only Sessions to a Structured Research Workflow"
+title: "Rethinking How I Use Claude: a Structured Research Workflow"
 date: 2026-05-17T15:11:01-04:00
 draft: false
 layout: docs
