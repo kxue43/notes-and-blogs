@@ -70,6 +70,16 @@ Otherwise, colors won't update even after restarting NeoVim.
 
 `:help nvui.base46` shows the `NvChad/base46` help page.
 
+## `lazy.nvim`: `opts` function vs. table when overriding a plugin spec
+
+When overriding a plugin that uses `opts = function() return ... end` (e.g. NvChad's `nvim-tree` spec), the function form is the *parent* in the metatable chain.
+`lazy.nvim` resolves specs recursively from parent to child: the parent's function is called first to produce a baseline `opts` table, then the child's `opts` are merged on top via deep merge.
+
+The subtlety: if the *child* spec uses `opts = function() return {...} end`, the returned table **replaces** whatever the parent produced (the incoming accumulated opts are passed as an argument but can be ignored).
+Using a plain `opts = {}` table in the child avoids this — it always merges on top of the parent's result.
+
+Practical rule: to extend a plugin's defaults, use `opts = {}` in your override spec. Only use the function form if you intentionally want to discard upstream defaults.
+
 ## Poke at the actual runtime path
 
 ```
