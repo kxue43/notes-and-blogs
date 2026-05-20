@@ -21,8 +21,6 @@ At seventeen he understood completely. In a world where whole lives could be era
 
 He left China with two suitcases and the unshakeable conviction that he was exceptional.
 
-This was the first of his problems.
-
 ---
 
 ## Part two: purgatory
