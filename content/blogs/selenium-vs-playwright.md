@@ -1,10 +1,10 @@
 ---
 author: Sato Seinosuke
 title: Selenium vs. Playwright
+subtitle: Selenium vs. Playwright for web automation.
 date: 2022-02-05T17:31:35-05:00
 draft: false
 layout: docs
-description: Selenium vs. Playwright for web automation.
 tags: 
 ---
 

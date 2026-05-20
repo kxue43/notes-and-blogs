@@ -1,10 +1,10 @@
 ---
 author: Sato Seinosuke
 title: GPG for GitHub
+subtitle: Use GPG keys to sign GitHub commits.
 date: 2024-11-05T21:38:04-05:00
 draft: false
 layout: docs
-description: Use GPG keys to sign GitHub commits.
 tags: 
 - git
 - macos

@@ -1,10 +1,10 @@
 ---
 author: Sato Seinosuke
 title: Wayland Native
+subtitle: Running Linux apps with native Wayland.
 date: 2024-11-05T19:39:48-05:00
 draft: true
 layout: docs
-description: Running Linux apps with native Wayland.
 tags: 
 - Linux
 ---

@@ -1,10 +1,10 @@
 ---
 author: Sato Seinosuke
 title: Debian 12 Post Installation Steps
+subtitle: Steps to perform after a fresh Debian 12 installation.
 date: 2024-11-05T21:21:56-05:00
 draft: true
 layout: docs
-description: Steps to perform after a fresh Debian 12 installation.
 tags:
 - Linux
 - Debian

@@ -10,10 +10,19 @@ menus:
   main:
     - name: "Blogs"
       pageRef: "/blogs/"
-      weight: 30
+      weight: 20
     - name: "Notes"
       pageRef: "/notes/"
-      weight: 20
+      weight: 30
+    - name: "Novels"
+      pageRef: "/novels/"
+      weight: 40
+params:
+  mainSections:
+    - notes
+    - blogs
+    - novels
+
 taxonomies:
   tag: tags
 

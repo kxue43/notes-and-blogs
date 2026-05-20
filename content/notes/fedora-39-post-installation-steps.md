@@ -1,10 +1,10 @@
 ---
 author: Sato Seinosuke
 title: Fedora 39 Post Installation Steps
+subtitle: Steps to perform after a fresh Fedora 39 installation.
 date: 2024-11-05T17:16:29-05:00
 draft: true
 layout: docs
-description: Steps to perform after a fresh Fedora 39 installation.
 tags: 
 - Linux
 - Fedora

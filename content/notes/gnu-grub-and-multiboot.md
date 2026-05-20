@@ -1,10 +1,10 @@
 ---
 author: Sato Seinosuke
 title: GNU GRUB and Multiboot
+subtitle: Set up Linux multiboot using GNU GRUB.
 date: 2024-11-04T21:45:41-05:00
 draft: false
 layout: docs
-description: Set up Linux multiboot using GNU GRUB.
 tags: 
 - Linux
 ---

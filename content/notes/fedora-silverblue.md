@@ -1,10 +1,10 @@
 ---
 author: Sato Seinosuke
 title: Fedora Silverblue Desktop
+subtitl: Set up a Fedora Silverblue Linux desktop as developer machine.
 date: 2025-10-27T13:41:19-04:00
 draft: false
 layout: docs
-description: Set up a Fedora Silverblue Linux desktop as developer machine.
 tags:
 - Linux
 - dev machine

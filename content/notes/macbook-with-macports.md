@@ -1,10 +1,10 @@
 ---
 author: Sato Seinosuke
 title: MacBook with MacPorts
+subtitle: Set up an Intel-chip MacBook as developer machine using MacPorts as package manager. 
 date: 2025-10-27T13:40:57-04:00
 draft: false
 layout: docs
-description: Set up an Intel-chip MacBook as developer machine using MacPorts as package manager. 
 tags:
 - macOS
 - dev machine

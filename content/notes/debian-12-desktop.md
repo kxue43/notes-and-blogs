@@ -1,10 +1,10 @@
 ---
 author: Sato Seinosuke
 title: Debian 12 Desktop
+subtitle: Set up a Debian 12 Linux desktop as developer machine.
 date: 2025-10-27T13:41:19-04:00
 draft: true
 layout: docs
-description: Set up a Debian 12 Linux desktop as developer machine.
 tags:
 - Linux
 - dev machine

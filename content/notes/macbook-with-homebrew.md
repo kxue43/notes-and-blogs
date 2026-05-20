@@ -4,7 +4,7 @@ title: MacBook with Homebrew
 date: 2025-10-27T13:36:55-04:00
 draft: false
 layout: docs
-description: Set up an ARM-chip MacBook as developer machine using Homebrew as package manager.
+subtitle: Set up an ARM-chip MacBook as developer machine using Homebrew as package manager.
 tags:
 - macOS
 - dev machine
