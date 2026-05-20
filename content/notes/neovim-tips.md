@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: Neovim tips
+title: NeoVim Tips
 date: 2025-11-13T15:41:14-05:00
 draft: false
 layout: docs

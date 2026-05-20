@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: Developer machine security
+title: Developer Machine Security
 date: 2025-12-15T19:53:25-05:00
 draft: true
 layout: docs

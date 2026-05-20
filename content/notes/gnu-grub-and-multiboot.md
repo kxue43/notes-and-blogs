@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: Gnu grub and multiboot
+title: GNU GRUB and Multiboot
 date: 2024-11-04T21:45:41-05:00
 draft: false
 layout: docs
