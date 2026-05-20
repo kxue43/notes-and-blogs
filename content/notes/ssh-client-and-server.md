@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: SSH Client and Server
+title: SSH client and server
 date: 2024-11-05T21:31:53-05:00
 draft: false
 layout: docs

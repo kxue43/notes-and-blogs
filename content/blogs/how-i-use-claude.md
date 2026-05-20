@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: "From Append-Only AI Sessions to a Structured Research Workflow"
+title: "From append-only ai sessions to a structured research workflow"
 date: 2026-05-17T15:11:01-04:00
 draft: false
 layout: docs
@@ -17,7 +17,7 @@ My default habit was to keep appending to an existing Claude session as long as 
 
 After thinking it through, I'm convinced this is an anti-pattern — for two compounding reasons.
 
-## Problem 1: focus degradation
+## Problem: focus degradation
 
 The "Lost in the Middle" effect is well-documented:
 [LLMs exhibit a U-shaped attention curve (Stanford, 2023)](https://cs.stanford.edu/~nfliu/papers/lost-in-the-middle.arxiv2023.pdf).
@@ -39,7 +39,7 @@ Sonnet 4.6 has two mitigations:
 
 For IT design work, this is dangerous. Early design decisions, rejected alternatives, and upfront constraints all drift toward the middle as the session grows. Claude won't say "I've lost track of that." It will answer confidently from a degraded representation.
 
-## Problem 2: cost
+## Problem: cost
 
 Without optimisation, the entire conversation history is sent as input tokens on every round trip. Sonnet 4.6 pricing:
 
@@ -97,7 +97,7 @@ This reframes the context window from a storage bucket into a workbench. The wor
 
 ---
 
-#### Phase 0 — session setup
+#### session setup
 
 **0a.** Create a session manifest file (see details below). List only the prior spec files directly relevant to today's research question in the `load:` front matter. If unsure whether a spec is relevant, it probably isn't.
 
@@ -105,7 +105,7 @@ This reframes the context window from a storage bucket into a workbench. The wor
 
 ---
 
-#### Phase 1 — focused fetch and initial analysis
+#### focused fetch and initial analysis
 
 **1.** State your narrowly scoped research question. One topic per session.
 
@@ -115,13 +115,13 @@ This reframes the context window from a storage bucket into a workbench. The wor
 
 ---
 
-#### Phase 2 — back-and-forth until genuine understanding
+#### back-and-forth until genuine understanding
 
 **4.** Go back and forth with Claude until you genuinely understand the *why* and each proposed step. No skipping.
 
 ---
 
-#### Phase 3 — spec writing and human review
+#### spec writing and human review
 
 **5.** Ask Claude to write the spec/note file.
 
@@ -131,7 +131,7 @@ This reframes the context window from a storage bucket into a workbench. The wor
 
 ---
 
-#### Phase 4 — context management
+#### context management
 
 **8.** `/compact`
 
@@ -141,7 +141,7 @@ Compaction runs in tiers: old MCP tool results are physically replaced with `[Ol
 
 ---
 
-#### Phase 5 — continue or reset
+#### continue or reset
 
 **10.** Apply a concrete rule:
 
@@ -157,7 +157,7 @@ Compaction runs in tiers: old MCP tool results are physically replaced with `[Ol
 
 ---
 
-#### Phase 6 — implementation (separate session)
+#### implementation (separate session)
 
 **13.** Only begin implementation after all relevant specs are written, reviewed, and consistent.
 

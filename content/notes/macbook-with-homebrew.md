@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: MacBook with Homebrew
+title: Macbook with homebrew
 date: 2025-10-27T13:36:55-04:00
 draft: false
 layout: docs

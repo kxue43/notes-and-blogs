@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: Debian 12 Desktop
+title: Debian 12 desktop
 date: 2025-10-27T13:41:19-04:00
 draft: true
 layout: docs

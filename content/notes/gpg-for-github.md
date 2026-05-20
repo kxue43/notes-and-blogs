@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: GPG for GitHub
+title: GPG for github
 date: 2024-11-05T21:38:04-05:00
 draft: false
 layout: docs

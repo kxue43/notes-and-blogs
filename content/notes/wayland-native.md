@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: Wayland Native
+title: Wayland native
 date: 2024-11-05T19:39:48-05:00
 draft: true
 layout: docs

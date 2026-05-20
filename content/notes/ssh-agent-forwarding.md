@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: SSH Agent Forwarding
+title: SSH agent forwarding
 date: 2025-12-15T20:39:48-05:00
 draft: true
 layout: docs

@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: Debian 12 Post Installation Steps
+title: Debian 12 post installation steps
 date: 2024-11-05T21:21:56-05:00
 draft: true
 layout: docs

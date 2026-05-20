@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: Fedora 39 Post Installation Steps
+title: Fedora 39 post installation steps
 date: 2024-11-05T17:16:29-05:00
 draft: true
 layout: docs

@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: MacBook with MacPorts
+title: Macbook with macports
 date: 2025-10-27T13:40:57-04:00
 draft: false
 layout: docs
