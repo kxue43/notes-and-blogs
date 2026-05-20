@@ -15,13 +15,13 @@ It is geared towards Go, Java, Python, JavaScript and Java development.
 
 All commands on this page should be executed from the user's home directory.
 
-## Install Nvidia drivers.
+## Install vidia drivers.
 
 Follow the steps on [Debian wiki](https://wiki.debian.org/NvidiaGraphicsDrivers).
 
 Reboot.
 
-## Install Flatpak and Flathub Firefox
+## Install flatpak and flathub firefox
 
 Install Flatpak.
 
@@ -63,13 +63,13 @@ Logout and login again. Open the "Extensions" app. Turn on extensions and config
 sudo apt install git curl jq
 ```
 
-## Build NeoVim from source
+## Build neovim from source
 
 Build the latest version available. The one in Debian 12 repository is too old.
 
 Make sure the `nvim` binary is on `PATH`. Typically, it should be placed in `~/.local/bin`.
 
-## Install `go`
+## Install go
 
 Download Go installation archive (`.tar.gz` file) from official website.
 
@@ -81,20 +81,20 @@ sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go${GO_VERSION}.linux-a
 popd
 ```
 
-## Install `uv`
+## Install uv
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | UV_NO_MODIFY_PATH=1 sh
 ```
 
-## Install `fnm`
+## Install fnm
 
 ```bash
 curl -fsSL https://fnm.vercel.app/install | bash
 pushd ~/.local/bin; ln -s ~/.local/share/fnm/fnm ; popd
 ```
 
-## Install AWS CLI v2
+## Install aws cli v2
 
 ```bash
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o ~/Downloads/awscliv2.zip
@@ -105,7 +105,7 @@ rm -rf aws awscliv2.zip
 popd
 ```
 
-## Install GitHub CLI
+## Install github cli
 
 ```bash
 (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
@@ -125,13 +125,13 @@ Login immediately.
 gh auth login
 ```
 
-## Install `shellcheck`
+## Install shellcheck
 
 ```bash
 sudo apt install shellcheck
 ```
 
-## Install `rustup`
+## Install rustup
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -147,7 +147,7 @@ git clone https://github.com/kxue43/dotfiles ~/.config/dotfiles
 
 Restart the terminal so that Bash start-up files take effect.
 
-## Set the `.gitconfig.local` file
+## Set the .gitconfig.local file
 
 If the global Git user name and email must be different from the personal ones,
 set them via the following commands.
@@ -175,7 +175,7 @@ If all Git configurations are the same with the personal defaults, symlink `.git
 ln -s $HOME/.config/dotfiles/.gitconfig.personal $HOME/.gitconfig.local
 ```
 
-## Install Go executables
+## Install go executables
 
 ```bash
 go install github.com/kxue43/cli-toolkit/cmd/toolkit@latest
@@ -185,7 +185,7 @@ go install github.com/kxue43/cli-toolkit/cmd/toolkit-show-md@latest
 go install mvdan.cc/sh/v3/cmd/shfmt@latest
 ```
 
-## Set up NeoVim
+## Set up neovim
 
 ```bash
 git clone https://github.com/kxue43/nvim-files ~/.config/nvim && nvim
@@ -195,7 +195,7 @@ After plugin installation finishes, run `:MasonInstallAll` to install all LSPs.
 
 Run `:checkhealth` to see if there are any problems.
 
-## Install Amazon Corretto Java
+## Install amazon corretto java
 
 ```bash
 wget -O - https://apt.corretto.aws/corretto.key | sudo gpg --dearmor -o /usr/share/keyrings/corretto-keyring.gpg && \
@@ -209,7 +209,7 @@ Use the following command to manage activate Java version.
 sudo update-alternatives --config java
 ```
 
-## Install Maven and Gradle
+## Install maven and gradle
 
 Manually install Maven and Gradle. Set their desired version numbers first.
 
@@ -237,7 +237,7 @@ rm ~/Downloads/gradle-${GRADLE_VERSION}-bin.zip
 
 ## Optional
 
-### Install `pyenv`
+### Install pyenv
 
 Install Python build dependencies.
 
@@ -254,7 +254,7 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 pushd ~/.pyenv && src/configure && make -C src && popd
 ```
 
-### Install `pipx` and `poetry`
+### Install pipx and poetry
 
 ```bash
 sudo apt install pipx
@@ -263,7 +263,7 @@ pipx install poetry
 pipx inject poetry poetry-plugin-export
 ```
 
-### Install Groovy
+### Install groovy
 
 Download a Groovy _SDK bundle_ into the `~/Downloads` folder, e.g. use [this link](https://groovy.apache.org/download.html).
 Set the `GROOVY_VERSION` environment variable below to the corresponding version.

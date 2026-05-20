@@ -15,14 +15,14 @@ This page covers the necessary steps after installing Debian 12.
 In the following steps, we assume an initial system update has been
 performed, either via Terminal or GNOME Software.
 
-## Install Flakpak
+## Install flakpak
 
 ```bash
 sudo apt install flatpak gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 ```
 
-## Install NVIDIA Proprietary Driver
+## Install nvdia proprietary driver
 
 By default, Debian 12 uses the graphics card integrated to the CPU. This
 is usually enough for most GUI applications, but not for games and is a
@@ -105,9 +105,9 @@ To check the version number of NVIDIA driver as a kernel module, run the followi
 modinfo -F version nvidia-current
 ```
 
-## Install Software
+## Install software
 
-### Dash-to-Dock
+### dash-to-dock
 
 In GNOME Software, install the DEB version of "Tweaks" and "Extensions". Install "Dash-to-Dock" by:
 
@@ -117,7 +117,7 @@ sudo apt install gnome-shell-extension-dashtodock
 
 Open the "Extensions" app and configure Dash-to-Dock settings.
 
-### VS Code
+### vs code
 
 VS Code is available as a DEB package in a Microsoft repository. We need
 to install the repo and the signing key. Then the package `code` can be installed and
@@ -141,7 +141,7 @@ sudo apt update
 sudo apt install code ## or code-insiders
 ```
 
-### Firefox
+### firefox
 
 First remove the Firefox that comes with the distro as a DEB package,
 because its version is usually way behind the current stable release of Firefox.
@@ -152,13 +152,13 @@ sudo apt remove firefox-esr
 
 Then install the Flathub version of Firefox in GNOME Software.
 
-### Thunderbird
+### thunderbird
 
 Install the Flathub version of Thunderbird in GNOME Software.
 
 Perform [configure thunderbird]({{% ref "/notes/wayland-native#flathub-thunderbird" %}}) to make Thunderbird run in Wayland native.
 
-## Enable backports Repository
+## enable backports repository
 
 Open the `sources.list` file by:
 

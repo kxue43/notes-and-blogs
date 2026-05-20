@@ -8,7 +8,7 @@ description:
 tags: 
 ---
 
-## Use SSH Agent Forwarding to Allow `git clone` on Server
+## Use SSH agent forwarding to allow git clone on server
 
 When cloning a private GitHub repository over SSH *on the server*, the server needs access to the SSH private key.
 It is not secure to place the SSH private key file directly on the server. The better option is

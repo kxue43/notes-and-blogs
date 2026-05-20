@@ -13,7 +13,7 @@ tags:
 
 This page describes how to set up a Linux machine as an SSH server and remote in from macOS.
 
-## SSH Server on Linux
+## SSH server on linux
 
 First install OpenSSH server on the specific Linux distro if it's not already present.
 
@@ -30,7 +30,7 @@ sudo systemctl enable sshd
 sudo systemctl start sshd
 ```
 
-## SSH Client on macOS
+## SSH client on macos
 
 The [Shai-Hulud 2.0 attack](https://www.youtube.com/watch?v=lqZo4waMB3c) indicates that the vulnerability of developer machines against
 e.g. supply-chain attacks should be taken very seriously.
@@ -87,7 +87,7 @@ Remote into the SSH server with the following command. Touch the secure key when
 ssh ${USER}@${ALIAS}
 ```
 
-## Optionally Disable SSH Password Authentication
+## Optionally disable SSH password authentication
 
 After setting up SSH Key authentication for one user, we can optionally disable SSH password authentication
 on the server altogether.

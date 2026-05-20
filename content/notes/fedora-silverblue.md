@@ -15,7 +15,7 @@ It is geared towards Go, Python and JavaScript development.
 
 All commands on this page should be executed from the user's home directory.
 
-## Install Nvidia drivers
+## Install nvidia drivers
 
 Follow the [official doc](https://docs.fedoraproject.org/en-US/fedora-silverblue/troubleshooting/#_using_nvidia_drivers).
 
@@ -34,7 +34,7 @@ Restart the Terminal app.
 
 Go to Preference. Choose the Gruvbox color palette. Set font to JetBrainsMono Nerd Font Regular, size 16.
 
-## Create a Toolbox container
+## Create a toolbox container
 
 ```bash
 toolbox create dev
@@ -56,25 +56,25 @@ sudo dnf install rlwrap jq yq fzf bat tree
 sudo dnf install vim-enhanced neovim ripgrep luarocks tmux pre-commit
 ```
 
-## Install `go`
+## Install go
 
 ```bash
 sudo dnf install golang
 ```
 
-## Install `uv`
+## Install uv
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | UV_NO_MODIFY_PATH=1 sh
 ```
 
-## Install `rustup`
+## Install rustup
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-## Install `fnm`
+## Install fnm
 
 `fnm` is a Node versions manager that doesn't cause a noticeable slow down at activation.
 The CLI interface is largely similar to that of `nvm`.
@@ -84,13 +84,13 @@ export PATH="$HOME/.cargo/bin:$PATH"
 cargo install fnm
 ```
 
-## Install AWS CLI v2
+## Install aws cli v2
 
 ```bash
 sudo dnf install awscli2
 ```
 
-## Install GitHub CLI
+## Install github cli
 
 For authentication against GitHub, the most convenient option is to use the GitHub CLI.
 
@@ -104,7 +104,7 @@ Login immediately.
 gh auth login
 ```
 
-## Install `shellcheck`
+## Install shellcheck
 
 ```bash
 sudo dnf install shellcheck
@@ -120,7 +120,7 @@ git clone https://github.com/kxue43/dotfiles ~/.config/dotfiles
 
 Restart the Terminal app so that Bash start-up files take effect.
 
-## Install Go executables
+## Install go executables
 
 ```bash
 go install github.com/kxue43/cli-toolkit/cmd/toolkit@latest
@@ -133,13 +133,13 @@ go install golang.org/x/pkgsite
 go install github.com/air-verse/air@latest
 ```
 
-## Install Rust executables
+## Install rust executables
 
 ```bash
 cargo install --locked tree-sitter-cli
 ```
 
-## Set up NeoVim
+## Set up neovim
 
 ```bash
 git clone https://github.com/kxue43/nvim-files ~/.config/nvim && nvim
@@ -152,7 +152,7 @@ Run `:checkhealth` to see if there are any problems.
 
 ## Optional
 
-### Install `pyenv`
+### Install pyenv
 
 `pyenv` is a CLI tool written in shell scripts. It installs multiple versions of Python by downloading and
 compiling them from C source code. First we install various tools that are needed to compile Python interpreters.
@@ -170,7 +170,7 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 pushd ~/.pyenv && src/configure && make -C src && popd
 ```
 
-### Install `pipx` and `poetry`
+### Install pipx and poetry
 
 ```bash
 sudo dnf install pipx

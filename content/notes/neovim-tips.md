@@ -9,7 +9,7 @@ tags:
 - NeoVim
 ---
 
-## Global find-and-replace in NeoVim (no LSP)
+## Global find-and-replace in neovim (no lsp)
 
 Use Telescope → quickfix → `:cdo` when there is no LSP refactoring support (e.g. shell codebases).
 
@@ -70,7 +70,7 @@ Otherwise, colors won't update even after restarting NeoVim.
 
 `:help nvui.base46` shows the `NvChad/base46` help page.
 
-## `lazy.nvim`: `opts` function vs. table when overriding a plugin spec
+## lazy.nvim: opts function vs. table when overriding a plugin spec
 
 When overriding a plugin that uses `opts = function() return ... end` (e.g. NvChad's `nvim-tree` spec), the function form is the *parent* in the metatable chain.
 `lazy.nvim` resolves specs recursively from parent to child: the parent's function is called first to produce a baseline `opts` table, then the child's `opts` are merged on top via deep merge.

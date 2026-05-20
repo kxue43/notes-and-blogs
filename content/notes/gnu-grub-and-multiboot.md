@@ -24,7 +24,7 @@ operation, but may instead use generic storage access methods provided
 by system firmware such as the BIOS or Open Firmware, though typically
 with restricted hardware functionality and lower performance".
 
-## GNU GRUB
+## Gnu grub
 
 According to the [GNU GRUB Wiki page](https://en.wikipedia.org/wiki/GNU_GRUB),
 "GNU GRUB is a boot loader package from the GNU Project. GRUB is the reference
@@ -115,7 +115,7 @@ but is if switching to using Fedora's own bootloader. This is because Debian's `
 after the kernel update on the Fedora side. Otherwise it's not aware of the new version without "probing".
 The other way around is probably also true, unless Fedora does something smarter here.
 
-## Update `grub.cfg`
+## Update grub.cfg
 
 First make sure the settings in `/etc/default/grub` are still desired. On Debian, `GRUB_DISABLE_OS_PROBER`
 should be set to `false` in order for it to "probe" for other distros on the same multiboot machine.

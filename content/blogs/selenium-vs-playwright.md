@@ -35,7 +35,7 @@ of Playwright on YouTube, I decided to give it a try. Playwright offers a conven
 from my code and yet definitively get file downloads done right. The Playwright version of the program doubles
 the speed of the Selenium version and runs in headless mode without any observed flakiness.
 
-## Selenium vs. Playwright
+## Selenium vs. playwright
 
 The presenter in the aforementioned video explains very nicely the difference in *architecture* between Selenium and
 Playwright, and its consequence on their respective capabilities. To put it simply, Selenium is a small
@@ -63,7 +63,7 @@ References:
 
 In this section, we compare the different ways that Selenium and Playwright wait for a file download to finish.
 
-### The Selenium version
+### The selenium version
 
 Since Selenium doesn't offer a download API, I must write a [custom wait condition][Selenium-custom-wait] by myself.
 Essentially, it is a callable that takes an instance of the Selenium Python package's WebDriver class as
@@ -102,7 +102,7 @@ After the above function returns True, I still had to make a `time.sleep(3)` cal
 before conducting subsequent operations on the downloaded file. This is because Selenium drives the same Chrome
 that I use for daily browsing, and I didn't figure out how to turn the virus scan off.
 
-### The Playwright version
+### The playwright version
 
 Playwright offers a very idiomatic download API. The following code is taken from the Playwright
 [documentation][Playwright-download-snippet] directly.
@@ -187,7 +187,7 @@ References:
 - [OAuth2.0][Okta-1], on which OpenID Connect is based.
 - [OpenID Connect Authorization Code flow with PKCE][Okta-2]
 
-## Learn the XPath syntax
+## Learn the xpath syntax
 
 It is not uncommon for a front-end framework/library to create `id` attributes for a lot of DOM elements in an HTML
 that it dynamically generates. React and Ember both do this. In this case, the XPath selector that we get by

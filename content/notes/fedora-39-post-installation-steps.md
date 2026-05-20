@@ -15,7 +15,7 @@ In particular, it deals with the cannot-wake-from-suspension issue caused by NVI
 
 In the following steps, we assume an initial system update has been performed, either via Terminal or GNOME Software.
 
-## DNF Configuration
+## dnf configuration
 
 Edit the file `/etc/dnf/dnf.conf` and append the following contents to it.
 
@@ -26,7 +26,7 @@ max_parallel_downloads=10
 keepcache=True
 ```
 
-## Enable RPM Fusion
+## Enable rpm fusion
 
 Run the following commands.
 
@@ -35,19 +35,19 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 sudo dnf groupupdate core
 ```
 
-## Add Flathub
+## Add flathub
 
 ```bash
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 ```
 
-## Change Hostname
+## Change hostname
 
 ```bash
 sudo hostnamectl set-hostname fedora-desktop
 ```
 
-## Install NVIDIA Proprietary Drivers {#Fedora_install_nvidia}
+## Install nvidia proprietary drivers
 
 For a fresh installation, if we go to `Settings --> About --> System Details`, we can see that
 the "Graphics" field shows "NV137", which is the open-source `nouveau` driver for NVIDIA cards.
@@ -104,9 +104,9 @@ tool that automate the whole process. Therefore, if NVIDIA proprietary drivers a
 (i.e. using the steps above), it should continue to work after kernel upgrade without users' manual intervention.
 This is a good reason NOT to install drivers by downloading binaries from vendor website directly.
 
-## Install Software
+## Install software
 
-### VS Code
+### vs code
 
 We install an RPM repository and install `code` from the repo.
 
@@ -124,7 +124,7 @@ dnf check-update
 sudo dnf install code # or code-insiders
 ```
 
-### Dash-to-Dock
+### dash-to-dock
 
 In GNOME Software, install the RPM version of "Tweaks" and the Flathub
 version of "Extensions". Install "Dash-to-Dock" by:
@@ -135,7 +135,7 @@ sudo dnf install gnome-shell-extension-dash-to-dock
 
 Open "Extensions" app and configure Dash-to-Dock feature.
 
-### DejaVu Sans Mono Font
+### Dejavu sans mono font
 
 In GNOME Software, search "DejaVu Sans Mono" and install the regular
 and bold fonts. Then run:
@@ -144,7 +144,7 @@ and bold fonts. Then run:
 sudo fc-cache -v
 ```
 
-## Configure Dual Boot
+## Configure dual boot
 
 If Fedora 39 was installed after Debian 12, Fedora's bootloader lists Debian, but not the other way around.
 To add Fedora to Debian's bootloader, do the following **on Debian**.
@@ -167,7 +167,7 @@ To add Fedora to Debian's bootloader, do the following **on Debian**.
   use `efibootmgr` to do the same thing
   ([reference](https://linuxconfig.org/how-to-manage-efi-boot-manager-entries-on-linux)).
 
-## Blacklist Kernel Modules
+## Blacklist kernel modules
 
 When dual booting Fedora 39 from the Debian 12 GRUB, the Wireless adapter driver `ath9k` reports error and
 NVIDIA drivers somehow couldn't be detected. Fedora is still able to boot, but reverts to using `nouveau`
@@ -214,7 +214,7 @@ After reboot, use the following command to verify that the two modules have been
 modprobe --showconfig | grep blacklist
 ```
 
-## Comments on Kernel Taints
+## Comments on kernel taints
 
 After the operations above, when booting Fedora 39, we still get the following messages on the start-up screen:
 
@@ -257,7 +257,7 @@ for more information.
 > [!NOTE]
 > If we didn't blacklist `nouveau`, the kernel taints will cause Fedora to fall back to using it.
 
-## Comments on Using Dual Monitor
+## Comments on using dual monitor
 
 On the back of my PC there are four video output connectors: one HDMI from the CPU integrated graphics card; one HDMI,
 one DVI and one DisplayPort from the NVIDIA GeForce GTX 1050 graphics card.

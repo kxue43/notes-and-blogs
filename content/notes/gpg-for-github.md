@@ -25,7 +25,7 @@ otherwise any one can claim to be any one by setting username and password with 
 brew install gnupg
 ```
 
-## Installing `pinentry-mac`
+## Installing pinentry-mac
 
 `pinentry-mac` is a GUI for prompting for passphrases.
 
@@ -40,7 +40,7 @@ Restart `gpg-agent`.
 gpg-connect-agent reloadagent /bye
 ```
 
-## Managing GPG Keys
+## Managing GPG keys
 
 The commands in this section applies to `gpg` version `2.1.17` or greater.
 
@@ -106,7 +106,7 @@ gpg --import public.key
 gpg --import private.key
 ```
 
-## Configure `git` to use key
+## Configure git to use key
 
 To use a specific key:
 
@@ -114,7 +114,7 @@ To use a specific key:
 git config --global user.signingkey $KEYID
 ```
 
-## Sign with `git`
+## Sign with git
 
 To sign a commit:
 

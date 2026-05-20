@@ -17,7 +17,7 @@ My default habit was to keep appending to an existing Claude session as long as 
 
 After thinking it through, I'm convinced this is an anti-pattern — for two compounding reasons.
 
-## Problem 1: Focus Degradation
+## Problem 1: focus degradation
 
 The "Lost in the Middle" effect is well-documented:
 [LLMs exhibit a U-shaped attention curve (Stanford, 2023)](https://cs.stanford.edu/~nfliu/papers/lost-in-the-middle.arxiv2023.pdf).
@@ -39,7 +39,7 @@ Sonnet 4.6 has two mitigations:
 
 For IT design work, this is dangerous. Early design decisions, rejected alternatives, and upfront constraints all drift toward the middle as the session grows. Claude won't say "I've lost track of that." It will answer confidently from a degraded representation.
 
-## Problem 2: Cost
+## Problem 2: cost
 
 Without optimisation, the entire conversation history is sent as input tokens on every round trip. Sonnet 4.6 pricing:
 
@@ -52,7 +52,7 @@ Without optimisation, the entire conversation history is sent as input tokens on
 
 The 90% prompt caching discount softens the cost curve significantly. Cost alone isn't a decisive argument for fresh sessions — but it compounds with the quality problem: you're paying more for worse attention.
 
-## The MCP Fetch Trap
+## The MCP fetch trap
 
 My second habit was to treat MCP-fetched source code and documentation as a reason to continue a session. *The source is already in context, no need to re-fetch.*
 
@@ -69,7 +69,7 @@ The failure mode is insidious: Claude doesn't say "I've lost track of that file.
 
 Re-fetching in a fresh session isn't a cost — it's a quality gain. A fresh fetch positions the source at the end of a short context, in the highest-attention zone. Unlike human memory, LLMs have no unconscious background processing. Information doesn't consolidate between turns — it either survives in the active context or it doesn't exist.
 
-## Long Context Windows Are Not Memory Systems
+## Long context windows are not memory systems
 
 The marketing pitch for large context windows focuses on the ceiling: *"you can fit 1M tokens."* The honest framing is about **the floor**: the only hard guarantee a context window provides is at its boundary — things outside it are gone. Everything inside is subject to attention quality, which is a gradient, not a binary.
 
@@ -83,9 +83,9 @@ The better question is never *"how much can I fit?"* but:
 
 This reframes the context window from a storage bucket into a workbench. The workflow below is built entirely around that principle.
 
-## The Workflow Pattern
+## The workflow pattern
 
-### Design Principles
+### Design principles
 
 1. **Sessions are topics, not projects.** One focused research question per session.
 2. **Externalise knowledge immediately.** Claude's working memory is unreliable over long sessions; a well-written spec file is permanent and precise.
@@ -93,11 +93,11 @@ This reframes the context window from a storage bucket into a workbench. The wor
 4. **Re-fetch rather than rely on buried context.** The marginal cost of an MCP call is negligible compared to the quality of a fresh, high-attention read.
 5. **Session boundaries are structural decisions, not judgement calls.** Define criteria upfront and apply them mechanically.
 
-### The Workflow
+### The workflow
 
 ---
 
-#### Phase 0 — Session Setup
+#### Phase 0 — session setup
 
 **0a.** Create a session manifest file (see details below). List only the prior spec files directly relevant to today's research question in the `load:` front matter. If unsure whether a spec is relevant, it probably isn't.
 
@@ -105,7 +105,7 @@ This reframes the context window from a storage bucket into a workbench. The wor
 
 ---
 
-#### Phase 1 — Focused Fetch and Initial Analysis
+#### Phase 1 — focused fetch and initial analysis
 
 **1.** State your narrowly scoped research question. One topic per session.
 
@@ -115,13 +115,13 @@ This reframes the context window from a storage bucket into a workbench. The wor
 
 ---
 
-#### Phase 2 — Back-and-Forth Until Genuine Understanding
+#### Phase 2 — back-and-forth until genuine understanding
 
 **4.** Go back and forth with Claude until you genuinely understand the *why* and each proposed step. No skipping.
 
 ---
 
-#### Phase 3 — Spec Writing and Human Review
+#### Phase 3 — spec writing and human review
 
 **5.** Ask Claude to write the spec/note file.
 
@@ -131,7 +131,7 @@ This reframes the context window from a storage bucket into a workbench. The wor
 
 ---
 
-#### Phase 4 — Context Management
+#### Phase 4 — context management
 
 **8.** `/compact`
 
@@ -141,7 +141,7 @@ Compaction runs in tiers: old MCP tool results are physically replaced with `[Ol
 
 ---
 
-#### Phase 5 — Continue or Reset
+#### Phase 5 — continue or reset
 
 **10.** Apply a concrete rule:
 
@@ -157,7 +157,7 @@ Compaction runs in tiers: old MCP tool results are physically replaced with `[Ol
 
 ---
 
-#### Phase 6 — Implementation (Separate Session)
+#### Phase 6 — implementation (separate session)
 
 **13.** Only begin implementation after all relevant specs are written, reviewed, and consistent.
 
@@ -165,7 +165,7 @@ Compaction runs in tiers: old MCP tool results are physically replaced with `[Ol
 
 **15.** Treat specs as ground truth. If implementation reveals something a spec got wrong, fix the spec first.
 
-## The Session Manifest File
+## The session manifest file
 
 To make loading the right files a deliberate, low-friction act, use a **session manifest format** as a single entry point for each Claude Code CLI session.
 
@@ -180,7 +180,7 @@ load:
 goal: "Understand how B2's session storage integrates with A1's auth token lifecycle"
 ---
 
-## Session Notes
+## Session notes
 
 Prior session conclusions, open questions, constraints, what not to re-cover.
 This file is committed to git — write it as a future-you artifact.
@@ -190,7 +190,7 @@ This file is committed to git — write it as a future-you artifact.
 
 **`goal:`** — frames Claude's attention before it reads anything, and serves as a retrieval cue after `/compact`.
 
-### Repo Structure
+### Repo structure
 
 Git track your spec files and session files.
 
@@ -205,11 +205,11 @@ project-docs/
     └── session-2.md
 ```
 
-## Make It a Skill
+## Make it a skill
 
 This is better implemented as a Claude Code skill — a slash command that handles both scaffolding new session manifests and loading existing ones. Feed the URL of this blog post to Claude and ask it to generate the skill. For an example, see [this skill definition](https://github.com/kxue43/dotfiles/blob/main/.claude/skills/kxue43-session-file/SKILL.md).
 
-## Key Takeaways
+## Key takeaways
 
 - **Append-only sessions are not free.** Every turn that pushes fetched source toward the middle is a quality regression, not a continuity gain.
 - **Externalise ruthlessly.** A spec file with your review applied is more reliable than any amount of context window.

@@ -19,13 +19,13 @@ All commands on this page should be executed from the user's home directory.
 
 For using MacPorts instead of Homebrew as the package manager, refer to [MacBook with MacPorts]({{% ref "/notes/macbook-with-macports" %}}).
 
-## Install Xcode Command Line Tools
+## Install xcode command line tools
 
 ```bash
 xcode-select --install
 ```
 
-## Install Homebrew
+## Install homebrew
 
 Use the macOS default Terminal app.
 
@@ -42,7 +42,7 @@ Add the following line to both `~/.zshrc` and `~/.bash_profile`. Restart termina
 eval $(/opt/homebrew/bin/brew shellenv)
 ```
 
-## Use the latest version of `bash`
+## Use the latest version of bash
 
 ```bash
 brew install bash bash-completion@2
@@ -71,7 +71,7 @@ sudo chsh -s /bin/bash
 
 Restart computer for the default shell change to take effect.
 
-## Install Ghostty
+## Install ghostty
 
 Go to the [download page](https://ghostty.org/download). Download the package installer and use it.
 
@@ -91,13 +91,13 @@ When coding, run NeoVim inside Tmux sessions.
 brew install git neovim ripgrep luarocks tmux pre-commit
 ```
 
-## Install `go`
+## Install go
 
 ```bash
 brew install go
 ```
 
-## Install `uv`
+## Install uv
 
 ```bash
 brew install uv
@@ -109,7 +109,7 @@ brew install uv
 brew install hugo sass/sass/sass
 ```
 
-## Install `fnm`
+## Install fnm
 
 `fnm` is a Node versions manager that doesn't cause a noticeable slow down at activation.
 The CLI interface is largely similar to that of `nvm`.
@@ -118,7 +118,7 @@ The CLI interface is largely similar to that of `nvm`.
 brew install fnm
 ```
 
-## Install AWS CLI v2
+## Install aws cli v2
 
 After installation, pin it to avoid unnecessary frequent version upgrade. It's enough to upgrade for every minor
 version bump only.
@@ -128,7 +128,7 @@ brew install awscli
 brew pin awscli
 ```
 
-## Install GitHub CLI
+## Install github cli
 
 For authentication against GitHub, the most convenient option is to use the GitHub CLI. To install, run the
 following commands.
@@ -143,13 +143,13 @@ Login immediately.
 gh auth login
 ```
 
-## Install `shellcheck`
+## Install shellcheck
 
 ```bash
 brew install shellcheck
 ```
 
-## Install `rustup`
+## Install rustup
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -165,7 +165,7 @@ git clone https://github.com/kxue43/dotfiles ~/.config/dotfiles
 
 Restart the terminal so that Bash start-up files take effect.
 
-## Set the `.gitconfig.local` file
+## Set the .gitconfig.local file
 
 If the global Git user name and email must be different from the personal ones,
 set them via the following commands.
@@ -193,7 +193,7 @@ If all Git configurations are the same with the personal defaults, symlink `.git
 ln -s $HOME/.config/dotfiles/.gitconfig.personal $HOME/.gitconfig.local
 ```
 
-## Set up GPG to sign Git commits
+## Set up GPG to sign git commits
 
 Install `gnupg` and `pinentry-mac`. The former is the GPG software while the latter is a GUI for prompting for passphrases.
 
@@ -234,7 +234,7 @@ uid           [ unknown] Sato Seinosuke (kxue43.github.io) <kxue43@gmail.com>
 ssb>  rsa4096 2025-12-24 [E]
 ```
 
-## Install Go executables
+## Install go executables
 
 ```bash
 go install github.com/kxue43/cli-toolkit/cmd/toolkit@latest
@@ -247,13 +247,13 @@ go install golang.org/x/pkgsite
 go install github.com/air-verse/air@latest
 ```
 
-## Install Rust executables
+## Install rust executables
 
 ```bash
 cargo install --locked tree-sitter-cli
 ```
 
-## Set up NeoVim
+## Set up neovim
 
 ```bash
 git clone https://github.com/kxue43/nvim-files ~/.config/nvim && nvim
@@ -264,7 +264,7 @@ and `:TSInstallAll` to install all `tree-sitter` parsers.
 
 Run `:checkhealth` to see if there are any problems.
 
-## Install Java, Maven and Gradle
+## Install java, raven and gradle
 
 First install [Amazon Corretto 21](https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html) or another LTS version.
 This manual installation is to avoid the Oracle OpenJDK that comes from `brew install openjdk`.
@@ -306,7 +306,7 @@ rm ~/Downloads/gradle-${GRADLE_VERSION}-bin.zip
 
 ## Optional
 
-### Install `pyenv`
+### Install pyenv
 
 `pyenv` is a CLI tool written in shell scripts. It installs multiple versions of Python by downloading and
 compiling them from C source code. First we install various tools that are needed to compile Python interpreters.
@@ -322,7 +322,7 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 pushd ~/.pyenv && src/configure && make -C src && popd
 ```
 
-### Install `pipx` and `poetry`
+### Install pipx and poetry
 
 ```bash
 brew install pipx
@@ -331,7 +331,7 @@ pipx install poetry
 pipx inject poetry poetry-plugin-export
 ```
 
-### Install Groovy
+### Install groovy
 
 Download a Groovy _SDK bundle_ into the `~/Downloads` folder, e.g. use [this link](https://groovy.apache.org/download.html).
 Set the `GROOVY_VERSION` environment variable below to the corresponding version.

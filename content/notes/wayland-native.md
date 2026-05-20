@@ -22,7 +22,7 @@ but running it in Wayland native makes things much better.
 
 This page describes how to detect if a GUI app is running Xwayland, and how to run some apps in Wayland native.
 
-## Detect Xwayland Applications Visually
+## Detect xwayland applications visually
 
 Run the following command to start `xeyes` from a terminal. A pair of eyes will appear in a small window.
 
@@ -41,7 +41,7 @@ Reference:
 
 - <https://wiki.archlinux.org/title/wayland#Detect_Xwayland_applications_visually>
 
-## VS Code
+## vs code
 
 The following command from a terminal starts VS Code in Wayland native.
 
@@ -57,7 +57,7 @@ itself and cannot be pinned to dock.
 In ArchLinux, there is a way to use the flags by putting them in a config file. On Debian/Fedora that approach
 doesn't seem to exist, but we can put the command above as an alias for `code` in `.zshrc`.
 
-## Flathub Thunderbird
+## Flathub thunderbird
 
 Thunderbird is not built upon Electron so the method for VS Code does not apply.
 
