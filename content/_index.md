@@ -2,6 +2,8 @@
 author: Sato Seinosuke
 title: Landing Page
 description: notes and blogs
+heading: "一所懸命"
+tagline: "信は望む所の實体にして 未だ見ぬ事の證據なり"
 content_blocks:
   - _bookshop_name: hero
     heading:
