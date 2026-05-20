@@ -35,8 +35,6 @@ Graduate school at Maryland was, he wrote, *a lonely, disheartening existential 
 
 Not metaphor. Literal.
 
-*I entered it as a puffed-up scoundrel, and now am graduating as a normal human being capable of love.*
-
 He had arrived brilliant and knew it, which is the most dangerous kind of brilliant. His field was the mathematics of pure structure: the art of decomposition. You break complex, abstract objects apart to find the foundational order underneath. He believed he was exceptional at it. 
 
 The purgatory disabused him of this.
@@ -126,7 +124,7 @@ The original coordinate. Still there.
 
 He opened NeoVim, the dark interface swallowing the screen until only an empty buffer remained. He began to type.
 
-*信は望む所の実体にして、未だ見ぬ事の証なり*
+*信は望む所の實体にして 未だ見ぬ事の證據なり*
 
 ---
 
