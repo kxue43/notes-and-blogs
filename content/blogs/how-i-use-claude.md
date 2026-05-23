@@ -37,7 +37,7 @@ Sonnet 4.6 has two mitigations:
 - **Context Awareness**: the model knows its remaining token budget and adjusts. Not a fix — knowing the window is 70% full doesn't restore attention to the middle.
 - **Context Compaction (beta)**: auto-summarises older turns as limits approach. Extends session length but is lossy — subtle design constraints and the *why* behind decisions are what gets compressed away first.
 
-For IT design work, this is dangerous. Early design decisions, rejected alternatives, and upfront constraints all drift toward the middle as the session grows. Claude won't say "I've lost track of that." It will answer confidently from a degraded representation.
+For design and architecture work, this is dangerous. Early design decisions, rejected alternatives, and upfront constraints all drift toward the middle as the session grows. Claude won't say "I've lost track of that." It will answer confidently from a degraded representation.
 
 ## Problem 2: cost
 
@@ -73,7 +73,7 @@ Re-fetching in a fresh session isn't a cost — it's a quality gain. A fresh fet
 
 The marketing pitch for large context windows focuses on the ceiling: *"you can fit 1M tokens."* The honest framing is about **the floor**: the only hard guarantee a context window provides is at its boundary — things outside it are gone. Everything inside is subject to attention quality, which is a gradient, not a binary.
 
-A larger window doesn't flatten that gradient. It stretches it. A 1M context doesn't give you 1M tokens of reliable attention — it gives you 1M tokens of *varying* attention, with an even larger danger zone in the middle. A large window also removes the forcing function of a tight one. **Sloppiness scales**.
+A larger window doesn't flatten that gradient. It stretches it. A large window also removes the forcing function of a tight one. **Sloppiness scales**.
 
 Long context windows are a genuine advantage for one-shot processing of large static documents. The problem is specifically **multi-turn, accumulating conversations**.
 
@@ -81,7 +81,7 @@ The better question is never *"how much can I fit?"* but:
 
 > **What is the minimum viable context that contains everything Claude needs and nothing it doesn't?**
 
-This reframes the context window from a storage bucket into a workbench. The workflow below is built entirely around that principle.
+This reframes the context window from a storage bucket into a workbench.
 
 ## The workflow pattern
 
@@ -127,43 +127,25 @@ This reframes the context window from a storage bucket into a workbench. The wor
 
 **6.** Read the spec fully. Fix anything wrong or incomplete yourself, then ask Claude to incorporate your edits.
 
+---
+
+#### Phase 4 — session boundary
+
 **7.** Ask Claude: *"Does anything in this session's findings contradict or modify the specs you loaded at the start? If so, update them now."*
 
----
+**8.** Once Phase 3 is complete, `/clear` unconditionally. If the urge to continue without clearing feels strong, treat that as a signal Phase 2 is genuinely not done — return there instead.
 
-#### Phase 4 — context management
-
-**8.** `/compact`
-
-**9.** **Immediately after compaction, ask Claude to re-read the spec it just wrote.** Do not skip this.
-
-Compaction runs in tiers: old MCP tool results are physically replaced with `[Old tool result content cleared]`, then everything is lossy-summarised. Re-reading the spec re-anchors Claude to the precise document, not a vague summary.
+**9.** After `/clear`: go back to Phase 0 — write a new session manifest with the spec just written and any other relevant prior specs in `load:`.
 
 ---
 
-#### Phase 5 — continue or reset
+#### Phase 5 — implementation (separate session)
 
-**10.** Apply a concrete rule:
+**10.** Only begin implementation after all relevant specs are written, reviewed, and consistent.
 
-| Condition | Action |
-|---|---|
-| First full cycle, next topic closely related | Continue — back to Phase 1 |
-| Already the second full cycle | `/clear` unconditionally |
-| Drift observed in Claude's responses | `/clear` unconditionally |
+**11.** Fresh session. Write a session manifest with only the specs the specific task directly touches in `load:`.
 
-**11.** If continuing: load any additional prior specs the new topic requires *now*, before starting.
-
-**12.** If clearing: go back to Phase 0 — write a new session manifest with the spec just written and any other relevant prior specs in `load:`.
-
----
-
-#### Phase 6 — implementation (separate session)
-
-**13.** Only begin implementation after all relevant specs are written, reviewed, and consistent.
-
-**14.** Fresh session. Write a session manifest with only the specs the specific task directly touches in `load:`.
-
-**15.** Treat specs as ground truth. If implementation reveals something a spec got wrong, fix the spec first.
+**12.** Treat specs as ground truth. If implementation reveals something a spec got wrong, fix the spec first.
 
 ## The session manifest file
 
@@ -188,7 +170,7 @@ This file is committed to git — write it as a future-you artifact.
 
 **`load:`** — imperative verb, unambiguous instruction. Paths relative to CWD, not to the session file itself.
 
-**`goal:`** — frames Claude's attention before it reads anything, and serves as a retrieval cue after `/compact`.
+**`goal:`** — frames Claude's attention before it reads anything.
 
 ### Repo structure
 
