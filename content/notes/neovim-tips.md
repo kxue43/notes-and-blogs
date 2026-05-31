@@ -45,6 +45,57 @@ Use `:vimgrep` with `%` instead of Telescope:
 Then proceed with `:cdo s/old/new/g | update` as above. Note that `:cdo`/`:cfdo` require a non-empty quickfix list — always populate it first.
 `copen` opens the quickfix list windown. Otherwise it's not shown.
 
+## Key combinations to avoid in neovim terminal mode
+
+Mapping these in `"t"` mode intercepts bytes before they reach the terminal process, breaking the programs running inside.
+
+### Avoid — identical to another key
+
+| Mapping | Byte | Alias |
+|---|---|---|
+| `<C-m>` | 0x0D | Enter / CR |
+| `<C-i>` | 0x09 | Tab |
+| `<C-h>` | 0x08 | Backspace |
+| `<C-[>` | 0x1B | Escape |
+| `<C-j>` | 0x0A | Newline (LF) |
+
+### Avoid — Unix signals and stdio conventions
+
+| Mapping | Byte | Effect |
+|---|---|---|
+| `<C-c>` | 0x03 | SIGINT — interrupt process |
+| `<C-d>` | 0x04 | EOF — close stdin / exit shell |
+| `<C-z>` | 0x1A | SIGTSTP — suspend process |
+| `<C-\>` | 0x1C | SIGQUIT — quit with core dump |
+
+### Avoid — terminal flow control and display
+
+| Mapping | Byte | Effect |
+|---|---|---|
+| `<C-s>` | 0x13 | XOFF — freeze terminal output |
+| `<C-q>` | 0x11 | XON — unfreeze terminal output |
+| `<C-l>` | 0x0C | Clear screen (used by shells and REPLs) |
+
+### Example: `<C-m>` breaking terminal mode
+
+```lua
+-- BAD: <C-m> == Enter (0x0D). Every Enter keypress in the terminal buffer
+-- triggers stopinsert() instead of being forwarded to the running process.
+-- Symptoms: interactive TUIs (fzf, Claude Code) stop responding to Enter.
+map("t", "<C-m>", function()
+  vim.cmd.stopinsert()
+end)
+
+-- GOOD: use a byte with no terminal meaning.
+map("t", "<C-b>", function()
+  vim.cmd.stopinsert()
+end)
+```
+
+### Safe in normal mode
+
+All of the above are fine to map in `"n"` mode — Neovim owns key interpretation there and nothing is forwarded to a subprocess.
+
 ## Inspect a user-created command
 
 ```
