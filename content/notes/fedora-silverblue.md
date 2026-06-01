@@ -110,71 +110,10 @@ gh auth login
 sudo dnf install shellcheck
 ```
 
-## Get dot files
+{{% get-dotfiles %}}
 
-```bash
-mkdir -p ~/.config
-git clone https://github.com/kxue43/dotfiles ~/.config/dotfiles
-~/.config/dotfiles/set-up.sh
-```
+{{% install-go-executables %}}
 
-Restart the Terminal app so that Bash start-up files take effect.
+{{% install-rust-executables %}}
 
-## Install go executables
-
-```bash
-go install github.com/kxue43/cli-toolkit/cmd/toolkit@latest
-go install github.com/kxue43/cli-toolkit/cmd/toolkit-assume-role@latest
-go install github.com/kxue43/cli-toolkit/cmd/toolkit-serve-static@latest
-go install github.com/kxue43/cli-toolkit/cmd/toolkit-show-md@latest
-go install mvdan.cc/sh/v3/cmd/shfmt@latest
-go install golang.org/x/tools/cmd/godoc@latest
-go install golang.org/x/pkgsite
-go install github.com/air-verse/air@latest
-```
-
-## Install rust executables
-
-```bash
-cargo install --locked tree-sitter-cli
-```
-
-## Set up neovim
-
-```bash
-git clone https://github.com/kxue43/nvim-files ~/.config/nvim && nvim
-```
-
-After plugin installation finishes, run `:MasonInstallAll` to install all LSPs
-and `:TSInstallAll` to install all `tree-sitter` parsers.
-
-Run `:checkhealth` to see if there are any problems.
-
-## Optional
-
-### Install pyenv
-
-`pyenv` is a CLI tool written in shell scripts. It installs multiple versions of Python by downloading and
-compiling them from C source code. First we install various tools that are needed to compile Python interpreters.
-
-```bash
-sudo dnf update vte-profile  # https://github.com/containers/toolbox/issues/390
-sudo dnf install zlib-devel bzip2 bzip2-devel readline-devel sqlite \
-sqlite-devel openssl-devel xz xz-devel libffi-devel findutils tk-devel libzstd-devel
-```
-
-Now install `pyenv` via `git clone` into the `~/.pyenv` folder.
-
-```bash
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-pushd ~/.pyenv && src/configure && make -C src && popd
-```
-
-### Install pipx and poetry
-
-```bash
-sudo dnf install pipx
-pipx ensurepath
-pipx install poetry
-pipx inject poetry poetry-plugin-export
-```
+{{% setup-neovim %}}
