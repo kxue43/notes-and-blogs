@@ -1,6 +1,6 @@
 ---
 author: Sato Seinosuke
-title: Switching lazynvim plugin to a fork
+title: Switching a LazyNvim Plugin to a Fork
 date: 2026-06-07T18:56:05-04:00
 draft: false
 layout: docs
