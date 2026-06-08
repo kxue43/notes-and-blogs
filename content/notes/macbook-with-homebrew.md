@@ -155,10 +155,12 @@ brew install shellcheck
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-{{% get-substance %}}
-
 {{% setup-gpg install="brew install gnupg pinentry-mac" %}}
 
 {{% install-go-executables %}}
 
 {{% install-rust-executables %}}
+
+{{% install-claude-code %}}
+
+{{% get-substance %}}

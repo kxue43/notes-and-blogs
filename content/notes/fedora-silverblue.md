@@ -110,8 +110,8 @@ gh auth login
 sudo dnf install shellcheck
 ```
 
-{{% get-substance %}}
-
 {{% install-go-executables %}}
 
 {{% install-rust-executables %}}
+
+{{% get-substance %}}

@@ -145,10 +145,12 @@ gh auth login
 sudo port install shellcheck
 ```
 
-{{% get-substance %}}
-
 {{% setup-gpg install="sudo port install gnupg2 pinentry-mac" %}}
 
 {{% install-go-executables %}}
 
 {{% install-rust-executables %}}
+
+{{% install-claude-code %}}
+
+{{% get-substance %}}
