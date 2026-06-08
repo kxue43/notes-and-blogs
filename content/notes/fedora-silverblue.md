@@ -115,5 +115,3 @@ sudo dnf install shellcheck
 {{% install-go-executables %}}
 
 {{% install-rust-executables %}}
-
-{{% setup-neovim %}}

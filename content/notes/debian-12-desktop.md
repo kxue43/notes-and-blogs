@@ -157,16 +157,6 @@ go install github.com/kxue43/cli-toolkit/cmd/toolkit-show-md@latest
 go install mvdan.cc/sh/v3/cmd/shfmt@latest
 ```
 
-## Set up neovim
-
-```bash
-git clone https://github.com/kxue43/nvim-files ~/.config/nvim && nvim
-```
-
-After plugin installation finishes, run `:MasonInstallAll` to install all LSPs.
-
-Run `:checkhealth` to see if there are any problems.
-
 ## Install amazon corretto java
 
 ```bash
