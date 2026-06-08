@@ -145,7 +145,7 @@ gh auth login
 sudo port install shellcheck
 ```
 
-{{% get-dotfiles %}}
+{{% get-substance %}}
 
 {{% setup-gpg install="sudo port install gnupg2 pinentry-mac" %}}
 

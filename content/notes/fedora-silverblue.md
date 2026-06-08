@@ -110,7 +110,7 @@ gh auth login
 sudo dnf install shellcheck
 ```
 
-{{% get-dotfiles %}}
+{{% get-substance %}}
 
 {{% install-go-executables %}}
 
