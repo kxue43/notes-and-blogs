@@ -80,7 +80,7 @@ From now on perform all CLI operations in Ghostty.
 ## Install essential utilities
 
 ```bash
-brew install rlwrap fzf bat tree jq yq
+brew install fzf bat tree jq yq
 ```
 
 ## Install coding tools
@@ -106,7 +106,7 @@ brew install uv
 ## Install documentation tools
 
 ```bash
-brew install hugo sass/sass/sass
+brew install hugo
 ```
 
 ## Install fnm

@@ -84,7 +84,7 @@ From now on perform all CLI operations in Ghostty.
 ## Install essential utilities
 
 ```bash
-sudo port install curl jq yq rlwrap fzf bat tree
+sudo port install curl jq yq fzf bat tree
 ```
 
 ## Install coding tools
