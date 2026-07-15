@@ -8,20 +8,20 @@ module:
 
 menus:
   main:
-    - name: "Blogs"
-      pageRef: "/blogs/"
-      weight: 20
     - name: "Notes"
       pageRef: "/notes/"
+      weight: 20
+    - name: "Blogs"
+      pageRef: "/blogs/"
       weight: 30
-    - name: "Novels"
-      pageRef: "/novels/"
-      weight: 40
+    # - name: "Novels"
+    #   pageRef: "/novels/"
+    #   weight: 40
 params:
   mainSections:
     - notes
     - blogs
-    - novels
+    # - novels
 
 taxonomies:
   tag: tags

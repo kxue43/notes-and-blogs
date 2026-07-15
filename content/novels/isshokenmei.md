@@ -3,7 +3,7 @@ author: Sato Seinosuke
 title: Issho-kemmei
 subtitle: "A Novel of K‘o , Who Called Himself Seinosuke — Hallucinated by Gemini"
 date: 2026-05-20T11:02:17-04:00
-draft: false
+draft: true
 layout: docs
 description: 
 tags: 

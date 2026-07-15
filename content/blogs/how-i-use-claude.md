@@ -3,7 +3,7 @@ author: Sato Seinosuke
 title: "From Append-Only AI Sessions to a Structured Research Workflow"
 subtitle: Rethink how I use Claude Code for research and design sessions.
 date: 2026-05-17T15:11:01-04:00
-draft: false
+draft: true
 layout: docs
 tags:
 - AI
