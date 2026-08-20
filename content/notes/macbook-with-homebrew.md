@@ -120,13 +120,11 @@ brew install fnm
 
 ## Install aws cli v2
 
-After installation, pin it to avoid unnecessary frequent version upgrade. It's enough to upgrade for every minor
-version bump only.
-
 ```bash
-brew install awscli
-brew pin awscli
+curl -fsSL https://awscli.amazonaws.com/v2/install.sh | bash
 ```
+
+Update via `aws update` when needed.
 
 ## Install github cli
 

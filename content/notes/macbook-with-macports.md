@@ -119,10 +119,10 @@ sudo port install fnm
 ## Install aws cli v2
 
 ```bash
-curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-sudo installer -pkg AWSCLIV2.pkg -target /
-rm AWSCLIV2.pkg
+curl -fsSL https://awscli.amazonaws.com/v2/install.sh | bash
 ```
+
+Update via `aws update` when needed.
 
 ## Install github cli
 
