@@ -84,6 +84,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 cargo install fnm
 ```
 
+Then install at least one LTS node version via `fnm.`
+
 ## Install aws cli v2
 
 ```bash

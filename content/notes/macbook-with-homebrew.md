@@ -118,6 +118,8 @@ The CLI interface is largely similar to that of `nvm`.
 brew install fnm
 ```
 
+Then install at least one LTS node version via `fnm.`
+
 ## Install aws cli v2
 
 ```bash

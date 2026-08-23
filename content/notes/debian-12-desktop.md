@@ -94,6 +94,8 @@ curl -fsSL https://fnm.vercel.app/install | bash
 pushd ~/.local/bin; ln -s ~/.local/share/fnm/fnm ; popd
 ```
 
+Then install at least one LTS node version via `fnm.`
+
 ## Install aws cli v2
 
 ```bash
