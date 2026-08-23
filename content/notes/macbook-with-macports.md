@@ -89,10 +89,8 @@ sudo port install curl jq yq fzf bat tree
 
 ## Install coding tools
 
-When coding, run NeoVim inside Tmux sessions.
-
 ```bash
-sudo port install git neovim ripgrep lua-luarocks tmux pre-commit
+sudo port install git neovim ripgrep lua-luarocks pre-commit
 ```
 
 ## Install go

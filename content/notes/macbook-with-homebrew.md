@@ -85,10 +85,8 @@ brew install fzf bat tree jq yq
 
 ## Install coding tools
 
-When coding, run NeoVim inside Tmux sessions.
-
 ```bash
-brew install git neovim ripgrep luarocks tmux pre-commit
+brew install git neovim ripgrep luarocks pre-commit
 ```
 
 ## Install go
